@@ -9,7 +9,7 @@ from torchnet.meter import AverageValueMeter
 
 
 class Config(object):
-    data_path = 'data/'  # 数据集存放路径
+    data_path = '../../autodl-tmp/archive'  # 数据集存放路径
     num_workers = 4  # 多进程加载数据所用的进程数
     image_size = 512  # 图片尺寸
     batch_size = 512
@@ -23,6 +23,7 @@ class Config(object):
     ndf = 64  # 判别器feature map数
 
     save_path = 'imgs/'  # 生成图片保存路径
+    os.makedirs(save_path, exist_ok=True)
 
     vis = False  # 是否使用visdom可视化
     env = 'GAN'  # visdom的env
